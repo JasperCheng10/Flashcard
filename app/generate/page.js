@@ -1,6 +1,7 @@
 "use client"
 
 import { useUser } from '@clerk/nextjs'
+import { Box, Paper, Typography } from '@mui/material'
 import { useRouter } from 'next/navigation'
 
 export default function Generate() {
@@ -66,4 +67,16 @@ export default function Generate() {
         router.push('/flashcards')
     }
     
+    return <Contrainer maxwidth="md">
+        <Box sx={{
+            mt: 4, mb: 6, display: 'flex', alignItems: 'center'
+        }}>
+            <Typography variant="h4" Generate Flashcards></Typography>
+            <Paper sx={{p:4, width: '100%'}}></Paper>
+        </Box>
+    
+
+
+    </Contrainer>
+        
 } 

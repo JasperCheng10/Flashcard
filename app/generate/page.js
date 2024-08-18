@@ -1,9 +1,19 @@
 "use client"
 
+//imports 
 import { useUser } from '@clerk/nextjs'
-import { Box, CardActionArea, Paper, Typography } from '@mui/material'
+import { Box, CardActionArea, Dialog, DialogContent, Paper, TextField, Typography } from '@mui/material'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+//import DialogTitle from '@mui/material/DialogTitle';
+//import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogActions from '@mui/material/DialogActions';
 
+//components
 export default function Generate() {
     const {isLoaded, isSignedIn, user} = useUser()
     const [flashcards, setFlashcards] = useState([])
@@ -17,8 +27,9 @@ export default function Generate() {
         fetch('api/generate', {
             method: 'POST',
             body: text,
-        }).then((res) => res.json())
-        .then(data > setFlashcards(data))
+        })
+        .then((res) => res.json())
+        .then(data => setFlashcards(data)) // check if throwing error 
     }
 
     const handleCardClick = (id) => {
@@ -67,7 +78,8 @@ export default function Generate() {
         router.push('/flashcards')
     }
     
-    return <Contrainer maxwidth="md">
+    //return 
+    return <Container maxwidth="md">
         <Box sx={{
             mt: 4, mb: 6, display: 'flex', alignItems: 'center'
         }}>
@@ -88,8 +100,6 @@ export default function Generate() {
                     Submit 
                 </Button>
             </Paper>
-
-
         </Box>
     
         {flashcards.length > 0 && (
@@ -156,9 +166,30 @@ export default function Generate() {
         </Box>   
         )}
 
-        Dialog
+        <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>Save Flashcards</DialogTitle>
+            <DialogContent>
+                <DialogContentText>
+                    Please enter the name of the flashcard collection
+                </DialogContentText>
+                <TextField
+                autoFocus
+                margin="dense"
+                label="Collection Name"
+                type="text"
+                fullWidth
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                variant='outlined'
+                ></TextField>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={saveFlashcard}>Save</Button>
+            </DialogActions>
 
+        </Dialog>
 
-    </Contrainer>
+    </Container>
         
 } 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useUser } from '@clerk/nextjs'
-import { Box, Paper, Typography } from '@mui/material'
+import { Box, CardActionArea, Paper, Typography } from '@mui/material'
 import { useRouter } from 'next/navigation'
 
 export default function Generate() {
@@ -72,10 +72,57 @@ export default function Generate() {
             mt: 4, mb: 6, display: 'flex', alignItems: 'center'
         }}>
             <Typography variant="h4" Generate Flashcards></Typography>
-            <Paper sx={{p:4, width: '100%'}}></Paper>
+            <Paper sx={{p:4, width: '100%'}}>
+                <TextField
+                    value = {text}
+                    onChange={(e) => setText(e.target.value)} label="Text" multiline rows={4} fullWidth variant="outlined" sx={{mb: 2}}
+                />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleSubmit}
+                    sx={{mt: 2}}
+                    fullWidth
+                    submittype="submit"
+                >
+                    Submit 
+                </Button>
+            </Paper>
+
+
         </Box>
     
+        {flashcards.length > 0 && (
+        <Box sx={{mt:4}}>
+            <Typography variant="h5">Flashcards Preview</Typography>
+            <Grid container spacing={3}>
+                {flashcards.map((flashcard, index) => (
+                    <Grid item xs={12} sm={6} md={4} key={index}>
+                        <CardActionArea
+                            onClick={() => handleCardClick(index)}
+                        >
+                            <Cardcontent>
 
+                                <Box><div></div><Typography></Typography></Box>
+
+                            </Cardcontent>
+
+                        </CardActionArea>
+                       
+                    </Grid>
+                ))}
+            </Grid>
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={handleOpen}
+                sx={{mt: 2}}
+            >
+                Save
+            </Button>
+
+        </Box>   
+        )}
 
     </Contrainer>
         

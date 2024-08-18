@@ -2,16 +2,40 @@
 
 //imports 
 import { useUser } from '@clerk/nextjs'
-import { Box, CardActionArea, Dialog, DialogContent, Paper, TextField, Typography } from '@mui/material'
+import { 
+    Box, 
+    CardActionArea, 
+    Dialog, 
+    DialogContent, 
+    Paper, 
+    //TextField, 
+    Typography, 
+    Button,
+    Container,
+    Grid,
+    //CardContent,
+    DialogTitle,
+    DialogContentText,
+    DialogActions,
+    Card,
+    //Paper,
+    CardContent,
+    TextField, 
+} from '@mui/material'
+
+import {db} from 'firebase'
+
+
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
+//import Container from '@mui/material/Container';
+//import Button from '@mui/material/Button';
 //import DialogTitle from '@mui/material/DialogTitle';
 //import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
+//import DialogContent from '@mui/material/DialogContent';
+//import DialogContentText from '@mui/material/DialogContentText';
+//import DialogActions from '@mui/material/DialogActions';
+//import DialogTitle from '@mui/material/DialogTitle';
 
 //components
 export default function Generate() {

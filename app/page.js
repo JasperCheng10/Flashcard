@@ -17,7 +17,11 @@ import Head from "next/head";
 // test 2 
 export default function Home() {
   return (
-    <Container maxWidth="100vw">
+    <Container maxWidth="100vw" sx={{
+      backgroundColor: '#636363', 
+      padding: 2, 
+      color: 'white', 
+    }}>
       <Head>
         <title>Flashcard SaaS</title>
         <meta name="description" content="Create flashcard from your text" />
@@ -51,7 +55,7 @@ export default function Home() {
         <Typography variant="h5" gutterBottom>
           The easiest way to make flashcards from your text
         </Typography>
-        <Button variant="contained" sx={{ mt: 2, color: "primary" }}>
+        <Button variant='contained' sx={{mt:2, backgroundColor: 'black', color: '#ffffff','&:hover': {backgroundColor: 'gray',}, }}>
           Get Started
         </Button>
       </Box>
@@ -92,7 +96,7 @@ export default function Home() {
         </Grid>
       </Box>
       <Box sx={{ my: 6, textAlign: "center", padding:4, paddingBottom: 4}}>
-        <Typography variant="h4">Pricing</Typography>
+        <Typography variant="h4" sx={{ marginBottom: 2 }}>Pricing</Typography> 
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Box
@@ -111,7 +115,7 @@ export default function Home() {
                 {" "}
                 Access to basic flashcard Features and limited storage.
               </Typography>
-              <Button variant='contained' color='primary' sx={{mt:2}}>
+              <Button variant='contained' sx={{mt:2, backgroundColor: 'black', color: '#ffffff','&:hover': {backgroundColor: 'gray',}, }}>
                 Choose Basic
               </Button>
             </Box>
@@ -134,7 +138,7 @@ export default function Home() {
                 {" "}
                 Unlimited flashcard amd storage, with priority support.
               </Typography>
-              <Button variant='contained' color='primary' sx={{mt:2}}>
+              <Button variant='contained' sx={{mt:2, backgroundColor: 'black', color: '#ffffff','&:hover': {backgroundColor: 'gray',}, }}>
                 Choose Pro
               </Button>
             </Box>

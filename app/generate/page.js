@@ -23,8 +23,7 @@ import {
     TextField, 
 } from '@mui/material'
 
-import {db} from 'firebase'
-
+import {db} from 'firebase/firestore'
 
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'

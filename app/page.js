@@ -7,6 +7,7 @@ import {
   Button,
   Container,
   Grid,
+  Paper,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -14,7 +15,6 @@ import Head from "next/head";
 
 
 // test 2 
-
 export default function Home() {
   return (
     <Container maxWidth="100vw">
@@ -25,7 +25,7 @@ export default function Home() {
 
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" sx={{ flexGrow: 1}}>
             Flashcard Saas
           </Typography>
 
@@ -44,6 +44,7 @@ export default function Home() {
         sx={{
           textAlign: "center",
           my: 4,
+          color: "black",
         }}
       >
         <Typography variant="h2" gutterBottom>Welcome to Flashcard Saas</Typography>
@@ -59,41 +60,49 @@ export default function Home() {
         <Typography variant="h4" gutterBottom>Features</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
+            <Paper sx = {{background: 'linear-gradient(45deg, #ff7e5f, #feb47b)', p: 2}}>
             <Typography variant="h6" gutterBottom>Easy Text Input</Typography>
             <Typography>
               {" "}
               Simple put your text and let our software do the rest. Creating
               flashcards has never been easier
             </Typography>
+            </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
+            <Paper sx = {{background: 'linear-gradient(45deg, #ff7e5f, #feb47b)', p: 2}}> 
             <Typography variant="h6" gutterBottom>Smart Flashcards</Typography>
             <Typography>
               {" "}
               Our AI intelligently breaks down your text into concise
               flashcards, perfect for studying
             </Typography>
+            </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
+            <Paper sx = {{background: 'linear-gradient(45deg, #ff7e5f, #feb47b)', p: 2}}>
             <Typography variant="h6" gutterBottom>Accessible Anywhere</Typography>
             <Typography>
               {" "}
               Acess your flashcards from any device, at any time. Study on the
               go with ease.
             </Typography>
+            </Paper>
           </Grid>
         </Grid>
       </Box>
-      <Box sx={{ my: 6, textAlign: "center" }}>
+      <Box sx={{ my: 6, textAlign: "center", padding:4, paddingBottom: 4}}>
         <Typography variant="h4">Pricing</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Box
               sx={{
-                p: 3,
+                p: 4,
                 border: "1px solid",
                 borderColor: "grey.300",
                 borderRadius: 2,
+                color: "white",
+                background: 'linear-gradient(45deg, #ff7e5f, #feb47b)'
               }}
             >
               <Typography variant="h5"gutterBottom>Basic</Typography>
@@ -111,10 +120,12 @@ export default function Home() {
           <Grid item xs={12} md={6}>
             <Box
               sx={{
-                p: 3,
+                p: 4,
                 border: "1px solid",
                 borderColor: "grey.300",
                 borderRadius: 2,
+                color: "white",
+                background: 'linear-gradient(45deg, #ff7e5f, #feb47b)'
               }}
             >
               <Typography variant="h5"gutterBottom>Pro</Typography>

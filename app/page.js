@@ -16,14 +16,17 @@ import Head from "next/head";
 // test 2 
 export default function Home() {
   return (
-    <Container maxWidth="100vw" sx={{
+    <Container maxWidth="100vw"  sx={{
       //backgroundColor: '#636363', 
       //backgroundColor: '#white',
       //background: 'linear-gradient(45deg, #76c7e1, #40a4d8, #1e81ce)',
-      background: 'linear-gradient(45deg, #1e4a78, #1e81ce, #76c7e1)',
-      padding: 2, 
-      color: 'white', 
       //backgroundColor: 'linear-gradient(45deg, #ff7e5f, #feb47b)',
+      //background: 'linear-gradient(45deg, #1e4a78, #1e81ce, #76c7e1)',
+      background: 'linear-gradient(45deg, #0a3b5d, #11698e, #1fb2cc)',
+      //padding: 2, 
+      color: 'white', 
+      height: '120vh',
+      width: '100vw',
     }}>
       <Head>
         <title>Flashcard SaaS</title>
@@ -31,8 +34,8 @@ export default function Home() {
         
       </Head>
 
-      <AppBar position="static" sx={{backgroundColor: 'black', top: 0, width: '100%' , borderRadius: 2}}>
-      
+      <AppBar position="static" sx={{background:'linear-gradient(180deg, #000000 55%, #4d4d4d)', top: 0, borderRadius: 2}}>
+
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1}}>
             Flashcard Saas
@@ -52,8 +55,10 @@ export default function Home() {
       <Box
         sx={{
           textAlign: "center",
-          my: 4,
+          //my: 4,
           color: "white",
+          mt: 15, // Top margin
+          mb: 15, // Bottom margin
         }}
       >
         <Typography variant="h2" gutterBottom>Welcome to Flashcard Saas</Typography>

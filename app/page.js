@@ -13,21 +13,26 @@ import {
 } from "@mui/material";
 import Head from "next/head";
 
-
 // test 2 
 export default function Home() {
   return (
     <Container maxWidth="100vw" sx={{
-      backgroundColor: '#636363', 
+      //backgroundColor: '#636363', 
+      //backgroundColor: '#white',
+      //background: 'linear-gradient(45deg, #76c7e1, #40a4d8, #1e81ce)',
+      background: 'linear-gradient(45deg, #1e4a78, #1e81ce, #76c7e1)',
       padding: 2, 
       color: 'white', 
+      //backgroundColor: 'linear-gradient(45deg, #ff7e5f, #feb47b)',
     }}>
       <Head>
         <title>Flashcard SaaS</title>
         <meta name="description" content="Create flashcard from your text" />
+        
       </Head>
 
-      <AppBar position="static">
+      <AppBar position="static" sx={{backgroundColor: 'black', top: 0, width: '100%' , borderRadius: 2}}>
+      
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1}}>
             Flashcard Saas
@@ -48,7 +53,7 @@ export default function Home() {
         sx={{
           textAlign: "center",
           my: 4,
-          color: "black",
+          color: "white",
         }}
       >
         <Typography variant="h2" gutterBottom>Welcome to Flashcard Saas</Typography>
@@ -64,7 +69,16 @@ export default function Home() {
         <Typography variant="h4" gutterBottom>Features</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Paper sx = {{background: 'linear-gradient(45deg, #ff7e5f, #feb47b)', p: 2}}>
+          <Paper 
+            sx = {{
+              background: 'linear-gradient(45deg, #ff7e5f, #feb47b)',
+              p: 2, 
+              borderColor: 'white',
+              border: "1px solid",
+              borderRadius: 2,
+              color: "white",
+              }}
+            > 
             <Typography variant="h6" gutterBottom>Easy Text Input</Typography>
             <Typography>
               {" "}
@@ -74,7 +88,16 @@ export default function Home() {
             </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Paper sx = {{background: 'linear-gradient(45deg, #ff7e5f, #feb47b)', p: 2}}> 
+            <Paper 
+            sx = {{
+              background: 'linear-gradient(45deg, #ff7e5f, #feb47b)',
+              p: 2, 
+              borderColor: 'white',
+              border: "1px solid",
+              borderRadius: 2,
+              color: "white",
+              }}
+            > 
             <Typography variant="h6" gutterBottom>Smart Flashcards</Typography>
             <Typography>
               {" "}
@@ -84,7 +107,16 @@ export default function Home() {
             </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Paper sx = {{background: 'linear-gradient(45deg, #ff7e5f, #feb47b)', p: 2}}>
+            <Paper 
+            sx = {{
+              background: 'linear-gradient(45deg, #ff7e5f, #feb47b)',
+              p: 2, 
+              borderColor: 'white',
+              border: "1px solid",
+              borderRadius: 2,
+              color: "white",
+              }}
+            > 
             <Typography variant="h6" gutterBottom>Accessible Anywhere</Typography>
             <Typography>
               {" "}
@@ -95,7 +127,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-      <Box sx={{ my: 6, textAlign: "center", padding:4, paddingBottom: 4}}>
+      <Box sx={{ my: 6, textAlign: "center", padding:4, paddingBottom: 4, }}>
         <Typography variant="h4" sx={{ marginBottom: 2 }}>Pricing</Typography> 
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>

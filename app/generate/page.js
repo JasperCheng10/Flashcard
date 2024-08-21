@@ -45,16 +45,20 @@ export default function Generate() {
     const [name, setName] = useState('')
     const [open, setOpen] = useState(false)
     const router = useRouter
-
+    
+    
     const handleSubmit=async ()=>{
         fetch('api/generate', {
             method: 'POST',
             body: text,
         })
-        .then((res) => res.json())
+        .then((res) => res.json()) // error here
         .then(data => setFlashcards(data)) // check if throwing error 
     }
+    
 
+    
+    
     const handleCardClick = (id) => {
         setFlipped((prev) => ({
             ...prev,

@@ -2,9 +2,10 @@
 import { useUser } from '@clerk/nextjs'
 import { useEffect, useState } from 'react'
 
-import {collection, CollectionReference , doc, getDoc, setDoc} from 'firebase/firestore'
+import {collection, doc, getDoc, setDoc} from 'firebase/firestore'
 import {db} from 'firebase/firestore'
 import { Router, useRouter } from 'next/router'
+import { Card, Container, Typography } from '@mui/material'
 
 export default function Flashcards() {
     const {isLoaded, isSignedIn, user} = useUser()
@@ -38,4 +39,37 @@ export default function Flashcards() {
     const handleCardClick = (id) => {
         router.push(`/flashcards?id=${id}`)
     }
+
+    return(
+        <Container maxWidth="100vw">
+            <Grid Container spacing={3} sx={{
+                mt:4
+            }}
+            >
+                {flashcards.map((flashcard, index) sx=>{{
+                    <Grid item xs={12} sm={6} md={4} key={index}>
+                        <Card>
+                            <CartactionArea 
+                                onClick={() => 
+                                    handleCardClick(flashcard.id)}>
+
+                                <CardContent>
+                                    <Typography variant="h6">
+                                        {flashcard.name}
+                                    </Typography>
+                                </CardContent>
+
+                            </CartactionArea>
+                        </Card>
+
+                    </Grid>
+                }}
+            
+            </Grid>
+
+        </Container>
+
+    )
+
+    
 }

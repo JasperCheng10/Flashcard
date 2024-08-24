@@ -40,36 +40,26 @@ export default function Flashcards() {
         router.push(`/flashcards?id=${id}`)
     }
 
-    return(
+    return (
+
         <Container maxWidth="100vw">
-            <Grid Container spacing={3} sx={{
-                mt:4
-            }}
-            >
-                {flashcards.map((flashcard, index) sx=>{{
+            <Grid container spacing={3} sx={{ mt: 4 }}>
+                {flashcards.map((flashcard, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>
                         <Card>
-                            <CartactionArea 
-                                onClick={() => 
-                                    handleCardClick(flashcard.id)}>
-
+                            <CardActionArea onClick={() => handleCardClick(flashcard.id)}>
                                 <CardContent>
                                     <Typography variant="h6">
                                         {flashcard.name}
                                     </Typography>
                                 </CardContent>
-
-                            </CartactionArea>
+                            </CardActionArea>
                         </Card>
-
                     </Grid>
-                }}
-            
+                ))}
             </Grid>
-
         </Container>
+        
+    );
 
-    )
-
-    
 }
